@@ -11,11 +11,19 @@
 <!-- CSS in the <style> part-->
 <style>
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 body {
   background-color: #ecf0f1;
   font-family: 'Lato', sans-serif;
   overflow: hidden;
+  background-image: url('background.jpg');
+background-size: cover;
 }
+
+h1 {
+        font-family: 'Dancing Script', cursive;
+    font-size: 180%;
+    }    
 
 .container {
   display: flex;
@@ -180,7 +188,7 @@ body {
 
 .shadow {
   box-shadow: 0 0 8px 6px rgba(0, 0, 0, 0.2);
-  width: 60%;
+  width: 80%;
   border-radius: 10px;
   overflow: hidden;
   transition: .2s;
@@ -249,10 +257,7 @@ body {
    
 <div class="shadow">
         <nav class="navbar">
-      <div class="navbar-search">
-         <input type="search" class="navbar-search__input" placeholder="Search & Press 'Enter'">
-      </div>
-      
+      <h1> Company Name </h1>
       <div class="navbar-profile">
          <div class="navbar-profile__picture">
             <!--<img src="https://pbs.twimg.com/profile_images/1121474964987760640/srsqOxTD_400x400.png" alt="Profile Picture">-->
@@ -271,7 +276,12 @@ body {
 </svg>
          <div class="opt--text">Home</div>
       </div>
-      
+            <div class="opt">
+         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path  d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+</svg>
+         <div class="opt--text">About</div>
+      </div>
       <div class="opt">
          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
     <path d="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z" />
@@ -286,25 +296,13 @@ body {
          <div class="opt--text">Contact</div>
       </div>
       
-      <div class="opt">
-         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-    <path  d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-</svg>
-         <div class="opt--text">About</div>
-      </div>
+
       
-      <div class="opt">
-         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-</svg>
-         <div class="opt--text">Download</div>
-      </div>
    </div>
       
       <div class="page">
-           <div class="circle circle-1"></div>
-  <div class="circle circle-2"></div>
-  <div class="circle circle-3"></div>
+         <p>
+ </p>
       </div>
       
    </div>
@@ -313,14 +311,7 @@ body {
 </div>
 
 <!-- Logo and Footer -->
-<div class="profile">
-  <i class="fab fa-codepen" id="codepen"></i>
-  <p class="author"><a href="https://codepen.io/jorgert1205/#" target="_blank">/Jorgert1205</a></p>
-</div>
-
-<footer class="footer">
-  This pen was made by <span><a href="https://twitter.com/Jorgert1205" target="_blank">Jorge Reyes</a></span>.
-</footer>  
+ 
 </body>
 
 
