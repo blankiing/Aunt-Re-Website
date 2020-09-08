@@ -1,1 +1,329 @@
-<h1> Hello </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> <!-- Title for in the browser tab-->
+	 <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>
+</head>
+
+
+<!-- CSS in the <style> part-->
+<style>
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+body {
+  background-color: #ecf0f1;
+  font-family: 'Lato', sans-serif;
+  overflow: hidden;
+  background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  flex-direction: column;
+}
+
+.navbar {
+  flex: 1;
+  background-color: #ececec;
+  padding-left: 2rem;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: .2s;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.navbar-search {
+  background-color: transparent;
+  width: 40%;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+}
+.navbar-search__input {
+  border: none;
+  width: 80%;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #e2e2e2;
+  text-align: center;
+  color: #232323;
+  transition: .2s;
+}
+.navbar-search__input:focus {
+  width: 100%;
+}
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  color: #555;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  transition: .2s;
+}
+.navbar-profile:hover {
+  background-color: #d5d5d5;
+  color: #333;
+}
+.navbar-profile:active .navbar-profile__picture {
+  transform: translateY(3px);
+}
+.navbar-profile:active .navbar-profile__name {
+  transform: translateY(3px);
+}
+.navbar-profile__picture {
+  width: 40px;
+  height: 40px;
+  margin-left: 1rem;
+  order: 1;
+  transition: .2s;
+}
+.navbar-profile__picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  -moz-user-select: none;
+  user-select: none;
+}
+.navbar-profile__name {
+  color: inherit;
+  -moz-user-select: none;
+  user-select: none;
+  transition: .2s;
+}
+
+.sidebar {
+  background-color: #ecf0f1;
+}
+
+.opt {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem;
+  cursor: pointer;
+  background-color: #eee;
+  color: #535353;
+  transition: .1s;
+}
+.opt:hover {
+  background-color: #535353;
+  color: white;
+}
+.opt:active {
+  background-color: #333333;
+}
+.opt svg {
+  fill: currentColor;
+  margin-right: 8px;
+}
+.opt--text {
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: 300;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.profile {
+  color: #555;
+  position: absolute;
+  top: .5rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+.profile .fa-codepen {
+  margin-right: .5rem;
+}
+.profile .author a:link,
+.profile .author a:visited {
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.footer {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #cdd1d6;
+  background-color: #dee1e5;
+  font-weight: 300;
+  color: #555;
+  position: relative;
+}
+.footer span {
+  margin-left: 2px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.footer span a:link,
+.footer span a:visited {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.flexy {
+  display: flex;
+  width: 100%;
+}
+
+.shadow {
+  box-shadow: 0 0 8px 6px rgba(0, 0, 0, 0.2);
+  width: 60%;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: .2s;
+  animation: moveup 1s;
+}
+.shadow:hover {
+  box-shadow: 0 0 10px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.page {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff1ead;
+}
+.circle:not(:last-child) {
+  margin-right: 10px;
+}
+.circle-1 {
+  animation: moveup .9s infinite;
+}
+.circle-2 {
+  animation: moveup .9s .3s infinite;
+}
+.circle-3 {
+  animation: moveup .9s .6s infinite;
+}
+
+@keyframes moveup {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+</style>
+
+
+<!-- in the <script> part you can put the javascript code, if you have any-->
+<script>
+ 
+</script>
+
+
+<!-- in the <body> part you can put the html-->
+<body>
+
+<!-- Scripts and Links -->
+
+<div class="container">
+   
+<div class="shadow">
+        <nav class="navbar">
+      <div class="navbar-search">
+         <input type="search" class="navbar-search__input" placeholder="Search & Press 'Enter'">
+      </div>
+      
+      <div class="navbar-profile">
+         <div class="navbar-profile__picture">
+            <img src="https://pbs.twimg.com/profile_images/1121474964987760640/srsqOxTD_400x400.png" alt="Profile Picture">
+         </div>
+         <div class="navbar-profile__name">
+            Jorge R.
+         </div>
+      </div>
+   </nav>
+   
+   <div class="flexy">
+      
+        <div class="sidebar">
+      <div class="opt">
+         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+</svg>
+         <div class="opt--text">Home</div>
+      </div>
+      
+      <div class="opt">
+         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path d="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z" />
+</svg>
+         <div class="opt--text">Docs</div>
+      </div>
+      
+      <div class="opt">
+         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path  d="M6,17C6,15 10,13.9 12,13.9C14,13.9 18,15 18,17V18H6M15,9A3,3 0 0,1 12,12A3,3 0 0,1 9,9A3,3 0 0,1 12,6A3,3 0 0,1 15,9M3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3H5C3.89,3 3,3.9 3,5Z" />
+</svg>
+         <div class="opt--text">Contact</div>
+      </div>
+      
+      <div class="opt">
+         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path  d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+</svg>
+         <div class="opt--text">About</div>
+      </div>
+      
+      <div class="opt">
+         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+</svg>
+         <div class="opt--text">Download</div>
+      </div>
+   </div>
+      
+      <div class="page">
+           <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+  <div class="circle circle-3"></div>
+      </div>
+      
+   </div>
+   </div>
+   
+</div>
+
+<!-- Logo and Footer -->
+<div class="profile">
+  <i class="fab fa-codepen" id="codepen"></i>
+  <p class="author"><a href="https://codepen.io/jorgert1205/#" target="_blank">/Jorgert1205</a></p>
+</div>
+
+<footer class="footer">
+  This pen was made by <span><a href="https://twitter.com/Jorgert1205" target="_blank">Jorge Reyes</a></span>.
+</footer>  
+</body>
+
+
+</html>
