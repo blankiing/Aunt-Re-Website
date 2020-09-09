@@ -15,7 +15,7 @@
 body {
   background-color: #ecf0f1;
   font-family: 'Lato', sans-serif;
-  overflow: hidden;
+  /*overflow: hidden;*/
   background-image: url('background.jpg');
 background-size: cover;
 }
@@ -190,53 +190,32 @@ h1 {
   box-shadow: 0 0 8px 6px rgba(0, 0, 0, 0.2);
   width: 80%;
   border-radius: 10px;
-  overflow: hidden;
+  overflow-y: scroll;
   transition: .2s;
-  animation: moveup 1s;
+  /*animation: moveup 1s;*/
 }
+
 .shadow:hover {
   box-shadow: 0 0 10px 8px rgba(0, 0, 0, 0.1);
   transform: scale(1.05);
 }
 
 .page {
-  display: flex;
+  /*display: flex;*/
   background-color: white;
   justify-content: center;
   align-items: center;
-  flex: 1;
+  /*flex: 1;*/
+  width: 100%;
+  padding: 2em;
+
 }
 
-.circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #ff1ead;
-}
-.circle:not(:last-child) {
-  margin-right: 10px;
-}
-.circle-1 {
-  animation: moveup .9s infinite;
-}
-.circle-2 {
-  animation: moveup .9s .3s infinite;
-}
-.circle-3 {
-  animation: moveup .9s .6s infinite;
+img{
+  max-width: 75%;
+
 }
 
-@keyframes moveup {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 
 
 </style>
@@ -258,13 +237,6 @@ h1 {
 <div class="shadow">
         <nav class="navbar">
       <h1> Company Name </h1>
-      <div class="navbar-profile">
-         <div class="navbar-profile__picture">
-            <!--<img src="https://pbs.twimg.com/profile_images/1121474964987760640/srsqOxTD_400x400.png" alt="Profile Picture">-->
-         </div>
-         <div class="navbar-profile__name">
-         </div>
-      </div>
    </nav>
    
    <div class="flexy">
@@ -301,8 +273,11 @@ h1 {
    </div>
       
       <div class="page">
-         <p>
- </p>
+        <h2>Test</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis cum delectus, nemo consectetur sint optio vel voluptas nulla quaerat repellendus doloremque libero, magnam, soluta quia vitae pariatur quod. Harum, explicabo!</p>
+        <img src="https://www.vincentlammens.be/assets/img/minne/minnekesoep-8.JPG"><!-- Image (c) Vincent Lammens ;)-->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis cum delectus, nemo consectetur sint optio vel voluptas nulla quaerat repellendus doloremque libero, magnam, soluta quia vitae pariatur quod. Harum, explicabo!</p>
+
       </div>
       
    </div>
